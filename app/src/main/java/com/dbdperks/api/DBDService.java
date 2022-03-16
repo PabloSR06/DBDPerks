@@ -1,11 +1,16 @@
 package com.dbdperks.api;
 
+import com.dbdperks.api.data.Killer;
+import com.dbdperks.api.data.Perks;
+import com.dbdperks.api.data.Survivor;
 import com.google.gson.Gson;
 
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.ConnectionPool;
 import okhttp3.OkHttpClient;
+import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -14,7 +19,7 @@ public class DBDService {
 
     private static final String BASE_URL = "https://dbd-api.herokuapp.com/";
 
-    private DBDService service;
+    private DBDInterface service;
     private Gson gson = new Gson();
 
     public DBDService() {
@@ -31,10 +36,41 @@ public class DBDService {
                 .client(client)
                 .build();
 
-        service = retrofit.create(DBDService.class);
+        service = retrofit.create(DBDInterface.class);
     }
 
+    public ArrayList<Perks> perks() throws Exception {
 
+        Call<ArrayList<Perks>> call = service.perkList();
+
+        Response<ArrayList<Perks>> response = call.execute();
+
+        ArrayList<Perks> perksList = response.body();
+
+        return perksList;
+    }
+
+    public ArrayList<Survivor> survivors() throws Exception {
+
+        Call<ArrayList<Survivor>> call = service.survivorList();
+
+        Response<ArrayList<Survivor>> response = call.execute();
+
+        ArrayList<Survivor> survivorsList = response.body();
+
+        return survivorsList;
+    }
+
+    public ArrayList<Killer> killers() throws Exception {
+
+        Call<ArrayList<Killer>> call = service.killerList();
+
+        Response<ArrayList<Killer>> response = call.execute();
+
+        ArrayList<Killer> killerList = response.body();
+
+        return killerList;
+    }
 
     private void assertResponse(Response<?> response) throws Exception {
         if (!response.isSuccessful()) {
