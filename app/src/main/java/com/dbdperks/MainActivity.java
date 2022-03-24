@@ -13,9 +13,10 @@ import com.dbdperks.api.threads.LoadThread;
 
 import java.util.ArrayList;
 
-public class    MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<Perks> listas;
+
+    private LoadThread loadThread = new LoadThread();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +25,9 @@ public class    MainActivity extends AppCompatActivity {
 
         TextView txt = (TextView) findViewById(R.id.textView);
 
+        navBar();
 
-        LoadThread loadThread = new LoadThread();
+
         loadThread.start();
 
 
@@ -35,15 +37,9 @@ public class    MainActivity extends AppCompatActivity {
 
                 ArrayList<Perks> perks = loadThread.getPerksList();
 
-                if (perks == null){
-                    System.out.println("aA");
-
-                }else{
-                    Intent i = new Intent(MainActivity.this, PerksActivity.class);
-                    i.putParcelableArrayListExtra("perks",  perks);
-                    startActivity(i);
-
-                }
+                Intent i = new Intent(MainActivity.this, PerksActivity.class);
+                i.putParcelableArrayListExtra("perks",  perks);
+                startActivity(i);
 
             }
         });
@@ -53,5 +49,38 @@ public class    MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    public void navBar(){
+
+        findViewById(R.id.button_builds).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+
+
+                Intent intent = new Intent(MainActivity.this, PerksActivity.class);
+
+                startActivity(intent);
+
+            }
+        });
+        findViewById(R.id.button_perks).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                ArrayList<Perks> perks = loadThread.getPerksList();
+
+                Intent intent = new Intent(MainActivity.this, PerksActivity.class);
+                intent.putParcelableArrayListExtra("perks",  perks);
+                startActivity(intent);
+
+            }
+        });
+        findViewById(R.id.button_player).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                System.out.println("33333");
+//                Intent i = new Intent(MainActivity.this, PerksActivity.class);
+//                startActivity(i);
+            }
+        });
     }
 }

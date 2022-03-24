@@ -24,12 +24,11 @@ public class LoadThread extends Thread{
             perksList = dbdService.perks();
             killersList = dbdService.killers();
             survivorsList = dbdService.survivors();
-
-            System.out.println(perksList.toString());
-
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
 
