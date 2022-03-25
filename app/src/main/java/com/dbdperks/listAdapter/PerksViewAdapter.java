@@ -2,23 +2,18 @@ package com.dbdperks.listAdapter;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.drawable.Icon;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.dbdperks.LoadIconThread;
 import com.dbdperks.R;
-import com.dbdperks.Thread;
+import com.dbdperks.api.threads.Thread;
 import com.dbdperks.api.data.Perks;
-import com.dbdperks.api.threads.LoadThread;
 
 import java.util.ArrayList;
 
@@ -49,16 +44,6 @@ public class PerksViewAdapter extends ArrayAdapter<Perks> {
         String icon = currentNumberPosition.getIcon();
 
         imageView.setImageBitmap(Thread.getInstance().getIcons().get(position));
-
-
-        TextView textView1 = currentItemView.findViewById(R.id.textView1);
-        textView1.setText(currentNumberPosition.getPerkName());
-
-        TextView textView2 = currentItemView.findViewById(R.id.textView2);
-        textView2.setText(currentNumberPosition.getDescription());
-
-
-
 
         return currentItemView;
     }

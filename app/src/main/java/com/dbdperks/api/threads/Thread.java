@@ -1,9 +1,8 @@
-package com.dbdperks;
+package com.dbdperks.api.threads;
 
 import android.graphics.Bitmap;
 
 import com.dbdperks.api.data.Perks;
-import com.dbdperks.api.threads.LoadThread;
 
 import java.util.ArrayList;
 
@@ -30,7 +29,7 @@ public class Thread {
             try {
                 instance = new Thread();
                 System.out.println("222");
-                load.start();
+                load.run();
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
