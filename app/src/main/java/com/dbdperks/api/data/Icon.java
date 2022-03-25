@@ -18,7 +18,7 @@ public class Icon {
 
     public String getPortrait() {
         return portrait;
-    }
+}
 
     public void setPortrait(String portrait) {
         this.portrait = portrait;

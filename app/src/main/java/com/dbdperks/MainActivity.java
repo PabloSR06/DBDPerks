@@ -3,6 +3,7 @@ package com.dbdperks;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,30 +23,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+       // loadThread.start();
+        Thread.getInstance();
 
         TextView txt = (TextView) findViewById(R.id.textView);
 
         navBar();
-
-
-        loadThread.start();
-
-
-        Button button = (Button) findViewById(R.id.testButton);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-                ArrayList<Perks> perks = loadThread.getPerksList();
-
-                Intent i = new Intent(MainActivity.this, PerksActivity.class);
-                i.putParcelableArrayListExtra("perks",  perks);
-                startActivity(i);
-
-            }
-        });
-
-
-
 
 
 
@@ -56,8 +39,6 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.button_builds).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-
-
                 Intent intent = new Intent(MainActivity.this, PerksActivity.class);
 
                 startActivity(intent);
@@ -67,10 +48,10 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.button_perks).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                ArrayList<Perks> perks = loadThread.getPerksList();
 
                 Intent intent = new Intent(MainActivity.this, PerksActivity.class);
-                intent.putParcelableArrayListExtra("perks",  perks);
+                intent.putParcelableArrayListExtra("perks",  Thread.getInstance().getPerks());
+
                 startActivity(intent);
 
             }

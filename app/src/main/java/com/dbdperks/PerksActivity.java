@@ -2,10 +2,12 @@ package com.dbdperks;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.widget.ListView;
 
 import com.dbdperks.api.data.Perks;
+import com.dbdperks.listAdapter.PerksViewAdapter;
 
 import java.util.ArrayList;
 
@@ -17,10 +19,10 @@ public class PerksActivity extends AppCompatActivity {
         setContentView(R.layout.activity_perks);
 
         ArrayList<Perks> perksList = getIntent().getParcelableArrayListExtra("perks");
-        System.out.println(perksList.get(0).getName());
+        //ArrayList<Bitmap> perksIcons = getIntent().getParcelableArrayListExtra("icons");
+        ArrayList<Bitmap> perksIcons = null;
 
-
-        PerksViewAdapter perksAdapter = new PerksViewAdapter(this, perksList);
+        PerksViewAdapter perksAdapter = new PerksViewAdapter(this, perksList, perksIcons);
 
         ListView perklist = findViewById(R.id.list);
 
