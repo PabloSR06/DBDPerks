@@ -3,6 +3,7 @@ package com.dbdperks.api.threads;
 import android.graphics.Bitmap;
 
 import com.dbdperks.api.data.Perks;
+import com.dbdperks.api.data.Survivor;
 
 import java.util.ArrayList;
 
@@ -11,11 +12,18 @@ public class Thread {
     private static Thread instance;
     private static LoadThread load = new LoadThread();
 
-    public ArrayList<Bitmap> getIcons(){
+    public ArrayList<Bitmap> getPerksIcons(){
         return load.getPerksIcons();
     }
     public ArrayList<Perks> getPerks(){
         return load.getPerksList();
+    }
+
+    public ArrayList<Bitmap> getSurvivorIcons(){
+        return load.getSurvivorsIcons();
+    }
+    public ArrayList<Survivor> getSurvivor(){
+        return load.getSurvivorsList();
     }
 
     public static Thread getInstance() {

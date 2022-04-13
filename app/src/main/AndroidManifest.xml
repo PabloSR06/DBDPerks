@@ -15,6 +15,9 @@
             android:name=".PerksActivity"
             android:exported="false" />
         <activity
+            android:name=".PlayersActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

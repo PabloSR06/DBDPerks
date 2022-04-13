@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Thread.getInstance();
+       Thread.getInstance();
 
 
         TextView txt = (TextView) findViewById(R.id.textView);
@@ -44,9 +44,8 @@ public class MainActivity extends AppCompatActivity {
         });
         findViewById(R.id.button_player).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                System.out.println("33333");
-//                Intent i = new Intent(MainActivity.this, PerksActivity.class);
-//                startActivity(i);
+                Intent i = new Intent(MainActivity.this, PlayersActivity.class);
+                startActivity(i);
             }
         });
     }
