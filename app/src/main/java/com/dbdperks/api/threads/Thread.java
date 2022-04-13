@@ -11,12 +11,6 @@ public class Thread {
     private static Thread instance;
     private static LoadThread load = new LoadThread();
 
-
-    public static void main(String[] args) {
-
-
-    }
-
     public ArrayList<Bitmap> getIcons(){
         return load.getPerksIcons();
     }
@@ -28,8 +22,7 @@ public class Thread {
         if (instance == null) {
             try {
                 instance = new Thread();
-                System.out.println("222");
-                load.run();
+                load.start();
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }

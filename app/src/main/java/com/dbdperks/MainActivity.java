@@ -13,41 +13,31 @@ import com.dbdperks.api.threads.Thread;
 public class MainActivity extends AppCompatActivity {
 
 
-    private LoadThread loadThread = new LoadThread();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       // loadThread.start();
+
         Thread.getInstance();
+
 
         TextView txt = (TextView) findViewById(R.id.textView);
 
         navBar();
-
-
-
     }
 
     public void navBar(){
 
         findViewById(R.id.button_builds).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
                 Intent intent = new Intent(MainActivity.this, PerksActivity.class);
-
                 startActivity(intent);
-
             }
         });
         findViewById(R.id.button_perks).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-
                 Intent intent = new Intent(MainActivity.this, PerksActivity.class);
-                intent.putParcelableArrayListExtra("perks",  Thread.getInstance().getPerks());
-
                 startActivity(intent);
 
             }

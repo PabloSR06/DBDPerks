@@ -17,10 +17,9 @@ import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class LoadThread extends Thread{
+public class LoadThread extends java.lang.Thread {
 
     DBDService dbdService = new DBDService();
-
 
     private ArrayList<Perks> perksList;
 
@@ -36,26 +35,19 @@ public class LoadThread extends Thread{
             killersList = dbdService.killers();
             survivorsList = dbdService.survivors();
 
-
             perksIcons = new ArrayList<Bitmap>();
 
             for(int pos = 0; pos < perksList.size(); pos++ ) {
                 perksIcons.add(getBitmapFromURL(perksList.get(pos).getIcon()));
-
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
-
 
     public ArrayList<Bitmap> getPerksIcons(){
         return perksIcons;
     }
-
-
     public ArrayList<Perks> getPerksList(){
         return perksList;
     }
