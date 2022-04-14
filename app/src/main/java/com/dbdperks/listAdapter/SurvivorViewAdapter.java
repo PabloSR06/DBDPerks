@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -41,8 +42,13 @@ public class SurvivorViewAdapter extends ArrayAdapter<Survivor> {
 
         ImageView imageView = currentItemView.findViewById(R.id.perk_1);
         String icon = currentNumberPosition.getIcon().getPortrait();
-
         imageView.setImageBitmap(Thread.getInstance().getSurvivorIcons().get(position));
+
+
+        TextView survivor_name = currentItemView.findViewById(R.id.players_name);
+        survivor_name.setText(currentNumberPosition.getName());
+
+
 
         return currentItemView;
     }

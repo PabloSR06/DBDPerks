@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -43,6 +44,11 @@ public class PerksViewAdapter extends ArrayAdapter<Perks> {
         String icon = currentNumberPosition.getIcon();
 
         imageView.setImageBitmap(Thread.getInstance().getPerksIcons().get(position));
+
+        TextView perk_name = currentItemView.findViewById(R.id.perk_name);
+        perk_name.setText(currentNumberPosition.getPerkName());
+
+
 
         return currentItemView;
     }
