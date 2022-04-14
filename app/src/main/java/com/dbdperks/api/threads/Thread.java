@@ -2,6 +2,7 @@ package com.dbdperks.api.threads;
 
 import android.graphics.Bitmap;
 
+import com.dbdperks.api.data.Killer;
 import com.dbdperks.api.data.Perks;
 import com.dbdperks.api.data.Survivor;
 
@@ -24,6 +25,13 @@ public class Thread {
     }
     public ArrayList<Survivor> getSurvivor(){
         return load.getSurvivorsList();
+    }
+
+    public ArrayList<Bitmap> getKillersIcons(){
+        return load.getKillersIcons();
+    }
+    public ArrayList<Killer> getKillers(){
+        return load.getKillersList();
     }
 
     public static Thread getInstance() {

@@ -1,7 +1,9 @@
 package com.dbdperks;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,13 +23,19 @@ public class PlayersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_players);
 
-        ArrayList<Survivor> perksList = Thread.getInstance().getSurvivor();
+        findViewById(R.id.button_killers).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(PlayersActivity.this, KillersActivity.class);
+                startActivity(intent);
+            }
+        });
+        findViewById(R.id.button_survivors).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(PlayersActivity.this, SurvivorActivity.class);
+                startActivity(intent);
+            }
+        });
 
-        SurvivorViewAdapter perksAdapter = new SurvivorViewAdapter(this, perksList);
-
-        ListView perklist = findViewById(R.id.list);
-
-        perklist.setAdapter(perksAdapter);
 
     }
 }

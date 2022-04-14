@@ -33,6 +33,8 @@ public class LoadThread extends java.lang.Thread {
 
     private ArrayList<Bitmap> survivorsIcons;
 
+    private ArrayList<Bitmap> killersIcons;
+
     public void run() {
         try {
             perksList = dbdService.perks();
@@ -41,6 +43,7 @@ public class LoadThread extends java.lang.Thread {
 
             perksIcons = new ArrayList<Bitmap>();
             survivorsIcons = new ArrayList<Bitmap>();
+            killersIcons = new ArrayList<Bitmap>();
 
             for(int pos = 0; pos < perksList.size(); pos++ ) {
                 perksIcons.add(getBitmapFromURL(perksList.get(pos).getIcon()));
@@ -48,8 +51,10 @@ public class LoadThread extends java.lang.Thread {
             for(int pos = 0; pos < survivorsList.size(); pos++ ) {
                 survivorsIcons.add(getBitmapFromURL(survivorsList.get(pos).getIcon().getPortrait()));
             }
-            String f = "g";
-            System.out.println("22");
+            for(int pos = 0; pos < killersList.size(); pos++ ) {
+                killersIcons.add(getBitmapFromURL(killersList.get(pos).getIcon().getPortrait()));
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -60,6 +65,9 @@ public class LoadThread extends java.lang.Thread {
     }
     public ArrayList<Bitmap> getSurvivorsIcons(){
         return survivorsIcons;
+    }
+    public ArrayList<Bitmap> getKillersIcons(){
+        return killersIcons;
     }
 
     public ArrayList<Perks> getPerksList(){

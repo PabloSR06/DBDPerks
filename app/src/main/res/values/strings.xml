@@ -3,4 +3,6 @@
     <string name="button_player">CHARACTERS</string>
     <string name="button_perks">PERKS</string>
     <string name="button_builds">BUILDS</string>
+    <string name="button_survivors">Survivors</string>
+    <string name="button_killers">Killers</string>
 </resources>

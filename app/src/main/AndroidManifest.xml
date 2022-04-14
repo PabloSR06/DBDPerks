@@ -18,6 +18,12 @@
             android:name=".PlayersActivity"
             android:exported="false" />
         <activity
+            android:name=".KillersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SurvivorActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
