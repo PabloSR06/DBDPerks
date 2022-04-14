@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
        Thread.getInstance();
 
 
-        TextView txt = (TextView) findViewById(R.id.textView);
+
 
         navBar();
     }
