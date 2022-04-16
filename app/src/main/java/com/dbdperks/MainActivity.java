@@ -18,11 +18,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       Thread.getInstance();
 
-       while (Thread.getInstance().getStatus() == false){
-           System.out.println("1");
-       }
+
+//       while (Thread.getInstance().getStatus() == false){
+//           System.out.println("1");
+//       }
 
 
 
