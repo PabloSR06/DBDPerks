@@ -1,29 +1,16 @@
 CREATE DATABASE dbdperks;
 USE dbdperks;
 
-CREATE TABLE characters(
-    id_character INT NOT NULL AUTO_INCREMENT, 
-    CONSTRAINT PK_IDCHARACTER PRIMARY KEY(id_character),
-    nameCharacter VARCHAR(25) NOT NULL
-);
-CREATE TABLE perks(
-    id_Perk INT NOT NULL AUTO_INCREMENT, 
-    CONSTRAINT PK_IDPERK PRIMARY KEY(id_Perk),
-    namePerk VARCHAR(50) NOT NULL,
-    infoPerk NVARCHAR(500) NOT NULL,
-    iconPerk VARCHAR(250) NOT NULL,
-    id_character INT NOT NULL AUTO_INCREMENT, 
-    CONSTRAINT FK_PERKCHARACTER FOREIGN KEY (id_character) REFERENCES characters(id_character)
-);
-
-
-
 
 CREATE TABLE builds(
     id_Build INT NOT NULL AUTO_INCREMENT, 
     CONSTRAINT PK_IDBUILD PRIMARY KEY(id_Build),
+    perk1_id VARCHAR(30),
+    perk2_id VARCHAR(30),
+    perk3_id VARCHAR(30),
+    perk4_id VARCHAR(30),
     nameBuild VARCHAR(25) NOT NULL,
-    infoBuild VARCHAR(100) NOT NULL,
+    infoBuild VARCHAR(100) NOT NULL
 );
 
 
