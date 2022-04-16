@@ -20,6 +20,10 @@ public class MainActivity extends AppCompatActivity {
 
        Thread.getInstance();
 
+       while (Thread.getInstance().getStatus() == false){
+           System.out.println("1");
+       }
+
 
 
 

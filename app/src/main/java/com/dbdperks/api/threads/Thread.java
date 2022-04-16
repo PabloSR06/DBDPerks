@@ -45,4 +45,8 @@ public class Thread {
         }
         return instance;
     }
+
+    public Boolean getStatus(){
+        return load.getStatus();
+    }
 }

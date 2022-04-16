@@ -21,6 +21,8 @@ public class LoadThread extends java.lang.Thread {
 
     DBDService dbdService = new DBDService();
 
+    private Boolean completo = false;
+
     //DATA
     private ArrayList<Perks> perksList;
 
@@ -54,7 +56,7 @@ public class LoadThread extends java.lang.Thread {
             for(int pos = 0; pos < killersList.size(); pos++ ) {
                 killersIcons.add(getBitmapFromURL(killersList.get(pos).getIcon().getPortrait()));
             }
-
+            completo = true;
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -78,6 +80,10 @@ public class LoadThread extends java.lang.Thread {
     }
     public ArrayList<Killer> getKillersList(){
         return killersList;
+    }
+
+    public Boolean getStatus(){
+        return completo;
     }
 
 
