@@ -19,14 +19,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
-//       while (Thread.getInstance().getStatus() == false){
-//           System.out.println("1");
-//       }
-
-
-
-
         navBar();
     }
 

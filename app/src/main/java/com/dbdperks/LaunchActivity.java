@@ -28,7 +28,7 @@ public class LaunchActivity extends AppCompatActivity {
                 }
                 finish();
             }
-        }, 2000);
+        }, 4000);
     }
 
     private boolean isConnected(){
