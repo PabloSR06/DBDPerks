@@ -13,11 +13,17 @@ public class Thread {
     private static Thread instance;
     private static LoadThread load = new LoadThread();
 
-    public ArrayList<Bitmap> getPerksIcons(){
-        return load.getPerksIcons();
+    public ArrayList<Bitmap> getSurvivorPerksIcons(){
+        return load.getSurvivorPerksIcons();
     }
-    public ArrayList<Perks> getPerks(){
-        return load.getPerksList();
+    public ArrayList<Bitmap> getKillerPerksIcons(){
+        return load.getKillerPerksIcons();
+    }
+    public ArrayList<Perks> getSurvivorPerks(){
+        return load.getSurvivorPerksList();
+    }
+    public ArrayList<Perks> getKillerPerks(){
+        return load.getKillerPerksList();
     }
 
     public ArrayList<Bitmap> getSurvivorIcons(){

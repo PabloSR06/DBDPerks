@@ -39,6 +39,12 @@
             android:name=".SurvivorActivity"
             android:exported="false" />
         <activity
+            android:name=".PerksKillerActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".PerksSurvivorActivity"
+            android:exported="false"/>
+        <activity
             android:name=".MainActivity"
             android:exported="false"/>
     </application>

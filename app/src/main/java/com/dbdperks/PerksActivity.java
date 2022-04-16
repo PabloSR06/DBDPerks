@@ -2,13 +2,14 @@ package com.dbdperks;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Bitmap;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 
 import com.dbdperks.api.data.Perks;
 import com.dbdperks.api.threads.Thread;
-import com.dbdperks.listAdapter.PerksViewAdapter;
+import com.dbdperks.listAdapter.PerksKillerViewAdapter;
 
 import java.util.ArrayList;
 
@@ -19,12 +20,17 @@ public class PerksActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perks);
 
-        ArrayList<Perks> perksList = Thread.getInstance().getPerks();
-
-        PerksViewAdapter perksAdapter = new PerksViewAdapter(this, perksList);
-
-        ListView perklist = findViewById(R.id.list);
-
-        perklist.setAdapter(perksAdapter);
+        findViewById(R.id.button_killers).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(PerksActivity.this, PerksKillerActivity.class);
+                startActivity(intent);
+            }
+        });
+        findViewById(R.id.button_survivors).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(PerksActivity.this, PerksSurvivorActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

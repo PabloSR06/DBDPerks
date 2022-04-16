@@ -24,14 +24,18 @@ public class LoadThread extends java.lang.Thread {
     private Boolean completo = false;
 
     //DATA
-    private ArrayList<Perks> perksList;
+    private ArrayList<Perks> perkKillerList;
+
+    private ArrayList<Perks> perkSurvivorList;
 
     private ArrayList<Killer> killersList;
 
     private ArrayList<Survivor> survivorsList;
 
     //ICONS
-    private ArrayList<Bitmap> perksIcons;
+    private ArrayList<Bitmap> perkKillerIcons;
+
+    private ArrayList<Bitmap> perkSurvivorIcons;
 
     private ArrayList<Bitmap> survivorsIcons;
 
@@ -39,16 +43,22 @@ public class LoadThread extends java.lang.Thread {
 
     public void run() {
         try {
-            perksList = dbdService.perks();
+
+            perkKillerList = dbdService.killerPerks();
+            perkSurvivorList = dbdService.survivorPerks();
             killersList = dbdService.killers();
             survivorsList = dbdService.survivors();
 
-            perksIcons = new ArrayList<Bitmap>();
+            perkKillerIcons = new ArrayList<Bitmap>();
+            perkSurvivorIcons = new ArrayList<Bitmap>();
             survivorsIcons = new ArrayList<Bitmap>();
             killersIcons = new ArrayList<Bitmap>();
 
-            for(int pos = 0; pos < perksList.size(); pos++ ) {
-                perksIcons.add(getBitmapFromURL(perksList.get(pos).getIcon()));
+            for(int pos = 0; pos < perkSurvivorList.size(); pos++ ) {
+                perkSurvivorIcons.add(getBitmapFromURL(perkSurvivorList.get(pos).getIcon()));
+            }
+            for(int pos = 0; pos < perkKillerList.size(); pos++ ) {
+                perkKillerIcons.add(getBitmapFromURL(perkKillerList.get(pos).getIcon()));
             }
             for(int pos = 0; pos < survivorsList.size(); pos++ ) {
                 survivorsIcons.add(getBitmapFromURL(survivorsList.get(pos).getIcon().getPortrait()));
@@ -57,13 +67,17 @@ public class LoadThread extends java.lang.Thread {
                 killersIcons.add(getBitmapFromURL(killersList.get(pos).getIcon().getPortrait()));
             }
             completo = true;
+            System.out.println(completo);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public ArrayList<Bitmap> getPerksIcons(){
-        return perksIcons;
+    public ArrayList<Bitmap> getSurvivorPerksIcons(){
+        return perkSurvivorIcons;
+    }
+    public ArrayList<Bitmap> getKillerPerksIcons(){
+        return perkKillerIcons;
     }
     public ArrayList<Bitmap> getSurvivorsIcons(){
         return survivorsIcons;
@@ -72,8 +86,11 @@ public class LoadThread extends java.lang.Thread {
         return killersIcons;
     }
 
-    public ArrayList<Perks> getPerksList(){
-        return perksList;
+    public ArrayList<Perks> getSurvivorPerksList(){
+        return perkSurvivorList;
+    }
+    public ArrayList<Perks> getKillerPerksList(){
+        return perkKillerList;
     }
     public ArrayList<Survivor> getSurvivorsList(){
         return survivorsList;

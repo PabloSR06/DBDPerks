@@ -50,6 +50,28 @@ public class DBDService {
         return perksList;
     }
 
+    public ArrayList<Perks> survivorPerks() throws Exception {
+
+        Call<ArrayList<Perks>> call = service.perkSurvivorList();
+
+        Response<ArrayList<Perks>> response = call.execute();
+
+        ArrayList<Perks> perkSurvivorList = response.body();
+
+        return perkSurvivorList;
+    }
+
+    public ArrayList<Perks> killerPerks() throws Exception {
+
+        Call<ArrayList<Perks>> call = service.perkKillerList();
+
+        Response<ArrayList<Perks>> response = call.execute();
+
+        ArrayList<Perks> perkKillerList = response.body();
+
+        return perkKillerList;
+    }
+
     public ArrayList<Survivor> survivors() throws Exception {
 
         Call<ArrayList<Survivor>> call = service.survivorList();

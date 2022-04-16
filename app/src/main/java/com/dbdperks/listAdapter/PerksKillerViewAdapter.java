@@ -18,10 +18,10 @@ import com.dbdperks.api.data.Perks;
 
 import java.util.ArrayList;
 
-public class PerksViewAdapter extends ArrayAdapter<Perks> {
+public class PerksKillerViewAdapter extends ArrayAdapter<Perks> {
 
 
-    public PerksViewAdapter(@NonNull Context context, ArrayList<Perks> arrayList) {
+    public PerksKillerViewAdapter(@NonNull Context context, ArrayList<Perks> arrayList) {
         super(context, 0, arrayList);
     }
 
@@ -43,7 +43,7 @@ public class PerksViewAdapter extends ArrayAdapter<Perks> {
         ImageView imageView = currentItemView.findViewById(R.id.perk_1);
         String icon = currentNumberPosition.getIcon();
 
-        imageView.setImageBitmap(Thread.getInstance().getPerksIcons().get(position));
+        imageView.setImageBitmap(Thread.getInstance().getKillerPerksIcons().get(position));
 
         TextView perk_name = currentItemView.findViewById(R.id.perk_name);
         perk_name.setText(currentNumberPosition.getPerkName());
