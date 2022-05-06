@@ -4,11 +4,24 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.JsonReader;
 import android.view.View;
-import android.widget.TextView;
 
-import com.dbdperks.api.threads.LoadThread;
+import com.dbdperks.api.DBD_BUILDS_Service;
+import com.dbdperks.api.data.Build;
 import com.dbdperks.api.threads.Thread;
+import com.dbdperks.conection.ConectionController;
+import com.google.gson.Gson;
+import com.google.gson.JsonSerializer;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,7 +33,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         navBar();
+
+
+
     }
+
+
+
+
 
     public void navBar(){
 
