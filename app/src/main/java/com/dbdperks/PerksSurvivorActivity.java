@@ -1,6 +1,8 @@
 package com.dbdperks;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,5 +28,11 @@ public class PerksSurvivorActivity extends AppCompatActivity {
         ListView perklist = findViewById(R.id.list);
 
         perklist.setAdapter(perksAdapter);
+
+        /*perklist.setOnItemClickListener(new PerksSurvivorViewAdapter.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> adapter, View v, int position, long id) {
+                Perks selItem = (Perks) adapter.getItem(position);
+            }
+            });*/
     }
 }
