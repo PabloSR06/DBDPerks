@@ -6,6 +6,8 @@ import android.net.Uri;
 import android.util.Log;
 
 import com.dbdperks.api.DBDService;
+import com.dbdperks.api.DBD_BUILDS_Service;
+import com.dbdperks.api.data.Build;
 import com.dbdperks.api.data.Killer;
 import com.dbdperks.api.data.Perks;
 import com.dbdperks.api.data.Survivor;
@@ -41,6 +43,11 @@ public class LoadThread extends java.lang.Thread {
 
     private ArrayList<Bitmap> killersIcons;
 
+    //Builds
+    public static DBD_BUILDS_Service apiManager = DBD_BUILDS_Service.getInstance();
+
+    private ArrayList<Build> buildList;
+
     public void run() {
         try {
 
@@ -53,6 +60,10 @@ public class LoadThread extends java.lang.Thread {
             perkSurvivorIcons = new ArrayList<Bitmap>();
             survivorsIcons = new ArrayList<Bitmap>();
             killersIcons = new ArrayList<Bitmap>();
+
+            //BUILDS
+            buildList = apiManager.getBuilds();
+
 
             for(int pos = 0; pos < perkSurvivorList.size(); pos++ ) {
                 perkSurvivorIcons.add(getBitmapFromURL(perkSurvivorList.get(pos).getIcon()));
@@ -67,7 +78,7 @@ public class LoadThread extends java.lang.Thread {
                 killersIcons.add(getBitmapFromURL(killersList.get(pos).getIcon().getPortrait()));
             }
             completo = true;
-            System.out.println(completo);
+            System.out.println("Cargado " + completo);
         } catch (Exception e) {
             e.printStackTrace();
         }

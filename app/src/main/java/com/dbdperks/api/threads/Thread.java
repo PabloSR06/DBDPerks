@@ -2,16 +2,22 @@ package com.dbdperks.api.threads;
 
 import android.graphics.Bitmap;
 
+import com.dbdperks.api.DBD_BUILDS_Service;
 import com.dbdperks.api.data.Killer;
 import com.dbdperks.api.data.Perks;
 import com.dbdperks.api.data.Survivor;
+import com.dbdperks.conection.ConectionController;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class Thread {
 
     private static Thread instance;
     private static LoadThread load = new LoadThread();
+
 
     public ArrayList<Bitmap> getSurvivorPerksIcons(){
         return load.getSurvivorPerksIcons();
@@ -39,6 +45,8 @@ public class Thread {
     public ArrayList<Killer> getKillers(){
         return load.getKillersList();
     }
+
+
 
     public static Thread getInstance() {
         if (instance == null) {
