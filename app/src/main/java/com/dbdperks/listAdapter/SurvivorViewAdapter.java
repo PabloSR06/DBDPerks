@@ -53,7 +53,4 @@ public class SurvivorViewAdapter extends ArrayAdapter<Survivor> {
         return currentItemView;
     }
 
-
-
-
 }

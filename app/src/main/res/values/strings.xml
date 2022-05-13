@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">DBDPerks</string>
-    <string name="button_player">CHARACTERS</string>
-    <string name="button_perks">PERKS</string>
-    <string name="button_builds">BUILDS</string>
-    <string name="button_survivors">Survivors</string>
-    <string name="button_killers">Killers</string>
+    <string name="player">CHARACTERS</string>
+    <string name="perks">PERKS</string>
+    <string name="builds">BUILDS</string>
+    <string name="survivors">Survivors</string>
+    <string name="killers">Killers</string>
+    <string name="loading">Loading...</string>
+    <string name="loading_break">Not long know</string>
 </resources>

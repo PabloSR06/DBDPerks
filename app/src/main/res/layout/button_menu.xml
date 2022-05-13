@@ -21,20 +21,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/button_player" />
+            android:text="@string/player" />
 
         <Button
             android:id="@+id/button_builds"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/button_builds" />
+            android:text="@string/builds" />
 
         <Button
             android:id="@+id/button_perks"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/button_perks" />
+            android:text="@string/perks" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

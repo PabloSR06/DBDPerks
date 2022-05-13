@@ -29,10 +29,6 @@ public class PerksSurvivorActivity extends AppCompatActivity {
 
         perklist.setAdapter(perksAdapter);
 
-        /*perklist.setOnItemClickListener(new PerksSurvivorViewAdapter.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> adapter, View v, int position, long id) {
-                Perks selItem = (Perks) adapter.getItem(position);
-            }
-            });*/
+
     }
 }

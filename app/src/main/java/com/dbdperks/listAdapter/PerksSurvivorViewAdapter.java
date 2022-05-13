@@ -53,5 +53,6 @@ public class PerksSurvivorViewAdapter extends ArrayAdapter<Perks> {
     }
 
 
-    public enum OnItemClickListener {}
+
+
 }
