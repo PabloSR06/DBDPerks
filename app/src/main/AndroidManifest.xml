@@ -13,9 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DBDPerks">
-        <activity
-            android:name=".PlayerInfoActivity"
-            android:exported="false" />
+
         <activity
             android:name=".LaunchActivity"
             android:exported="true"
@@ -43,6 +41,12 @@
             android:exported="false" />
         <activity
             android:name=".PlayersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PlayerInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PerksInfoActivity"
             android:exported="false" />
     </application>
 
