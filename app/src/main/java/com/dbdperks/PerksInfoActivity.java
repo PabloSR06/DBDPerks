@@ -1,14 +1,13 @@
 package com.dbdperks;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.dbdperks.api.data.Killer;
 import com.dbdperks.api.data.Perks;
-import com.dbdperks.api.data.Survivor;
 import com.dbdperks.api.threads.Thread;
 
 public class PerksInfoActivity extends AppCompatActivity {
@@ -50,6 +49,13 @@ public class PerksInfoActivity extends AppCompatActivity {
         ImageView playerImage = findViewById(R.id.perkImage);
         playerImage.setImageBitmap(Thread.getInstance().getSurvivorPerksIcons().get(pos));
 
+        findViewById(R.id.button_addToBuild).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                SurvivorBuild.getInstance().addPerk(Thread.getInstance().getSurvivorPerks().get(pos).getIcon());
+            }
+        });
+
+
 
     }
     private void killer(){
@@ -64,5 +70,11 @@ public class PerksInfoActivity extends AppCompatActivity {
 
         ImageView playerImage = findViewById(R.id.perkImage);
         playerImage.setImageBitmap(Thread.getInstance().getKillerPerksIcons().get(pos));
+
+        findViewById(R.id.button_addToBuild).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //SurvivorBuild.getInstance().addPerk(Thread.getInstance().getSurvivorPerks().get(pos).getIcon());
+            }
+        });
     }
 }

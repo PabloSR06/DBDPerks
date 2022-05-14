@@ -77,7 +77,6 @@ public class PerksActivity extends AppCompatActivity {
                 intent.putExtra("option_code", 1);
                 intent.putExtra("player_pos", position);
                 startActivity(intent);
-//                SurvivorBuild.getInstance().addPerk(Thread.getInstance().getSurvivorPerks().get(position).getIcon());
 
             }
         });
