@@ -20,49 +20,22 @@ public class MainActivity extends AppCompatActivity {
 
         navBar();
 
+        Thread.getInstance();
     }
 
     public void navBar(){
-
-//        findViewById(R.id.button_builds).setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, PerksActivity.class);
-//                startActivity(intent);
-//            }
-//        });
         findViewById(R.id.button_survivors).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
-                if (Thread.getInstance().getSurvivorStatus() != false) {
-                    Intent intent = new Intent(MainActivity.this, SurvivorOptionsActivity.class);
+                    Intent intent = new Intent(MainActivity.this, OptionsActivity.class);
+                    intent.putExtra("option_code", 0);
                     startActivity(intent);
-                }else{
-                    if (patience == 5){
-                        patience = 0;
-                        Toast.makeText(MainActivity.this, getResources().getString(R.string.loading_break), Toast.LENGTH_SHORT).show();
-                    }else{
-                        Toast.makeText(MainActivity.this, getResources().getString(R.string.loading), Toast.LENGTH_SHORT).show();
-                        patience++;
-                    }
-                }
-
-
             }
         });
         findViewById(R.id.button_killers).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (Thread.getInstance().getKillerStatus() != false) {
-                    Intent i = new Intent(MainActivity.this, KillerOptionsActivity.class);
-                    startActivity(i);
-                }else{
-                    if (patience == 5){
-                        patience = 0;
-                        Toast.makeText(MainActivity.this, getResources().getString(R.string.loading_break), Toast.LENGTH_SHORT).show();
-                    }else{
-                        Toast.makeText(MainActivity.this, getResources().getString(R.string.loading), Toast.LENGTH_SHORT).show();
-                        patience++;
-                    }
-                }
+                    Intent intent = new Intent(MainActivity.this, OptionsActivity.class);
+                    intent.putExtra("option_code", 1);
+                    startActivity(intent);
             }
         });
     }

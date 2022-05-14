@@ -11,7 +11,8 @@
         android:layout_width="114dp"
         android:layout_height="114dp"
         android:padding="16dp"
-        tools:ignore="ContentDescription" />
+        tools:ignore="ContentDescription"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/perk_name"

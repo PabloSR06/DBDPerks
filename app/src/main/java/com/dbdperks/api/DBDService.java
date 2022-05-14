@@ -22,6 +22,9 @@ public class DBDService {
     private DBDInterface service;
     private Gson gson = new Gson();
 
+    private static DBDService dbdAPI;
+
+
     public DBDService() {
 
         ConnectionPool pool = new ConnectionPool(1, 5, TimeUnit.SECONDS);
@@ -99,5 +102,12 @@ public class DBDService {
             ErrorMessage error = gson.fromJson(response.errorBody().string(), ErrorMessage.class);
             throw new Exception(error.getMessage());
         }
+    }
+
+    public static DBDService getInstance() {
+        if (dbdAPI == null) {
+            dbdAPI = new DBDService();
+        }
+        return dbdAPI;
     }
 }

@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,13 +15,30 @@ import com.dbdperks.listAdapter.SurvivorViewAdapter;
 
 import java.util.ArrayList;
 
-public class SurvivorActivity extends AppCompatActivity {
+public class PlayersActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listplayers);
+        setContentView(R.layout.activity_list);
 
+        Bundle extras = this.getIntent().getExtras();
+        int option_code = 0;
+        if(extras !=null){
+            option_code = extras.getInt("option_code");
+        }
+
+        switch (option_code){
+            case 0:
+                survivor();
+                break;
+            case 1:
+                killer();
+                break;
+        }
+    }
+
+    private void survivor(){
         ArrayList<Survivor> survivors = Thread.getInstance().getSurvivor();
 
         SurvivorViewAdapter survivorAdapter = new SurvivorViewAdapter(this, survivors);
@@ -34,8 +50,20 @@ public class SurvivorActivity extends AppCompatActivity {
         survivorList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                System.out.println(survivorList.getX());
+                Survivor x = (Survivor) survivorList.getItemAtPosition(position);
+                System.out.println(x.getName());
+                Thread.getInstance().addString(x.getName());
             }
         });
+    }
+
+    private void killer(){
+        ArrayList<Killer> killers = Thread.getInstance().getKillers();
+
+        KillersViewAdapter killerAdapter = new KillersViewAdapter(this, killers);
+
+        ListView killerList = findViewById(R.id.list);
+
+        killerList.setAdapter(killerAdapter);
     }
 }

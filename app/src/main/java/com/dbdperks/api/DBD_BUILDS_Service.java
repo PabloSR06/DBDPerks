@@ -57,9 +57,31 @@ public class DBD_BUILDS_Service {
 
         Response<ArrayList<Build>> response = call.execute();
 
-        ArrayList<Build> perkKillerList = response.body();
+        ArrayList<Build> build = response.body();
 
-        return perkKillerList;
+        return build;
+    }
+
+    public ArrayList<Build> getBuildKillers() throws Exception {
+
+        Call<ArrayList<Build>> call = service.getBuildKillers();
+
+        Response<ArrayList<Build>> response = call.execute();
+
+        ArrayList<Build> buildKiller = response.body();
+
+        return buildKiller;
+    }
+
+    public ArrayList<Build> getBuildSurvivors() throws Exception {
+
+        Call<ArrayList<Build>> call = service.getBuildSurvivors();
+
+        Response<ArrayList<Build>> response = call.execute();
+
+        ArrayList<Build> buildSurvivor = response.body();
+
+        return buildSurvivor;
     }
 
     private void assertResponse(Response<?> response) throws Exception {

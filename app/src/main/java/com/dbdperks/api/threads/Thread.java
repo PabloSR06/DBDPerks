@@ -15,45 +15,65 @@ import java.util.ArrayList;
 public class Thread {
 
     private static Thread instance;
-    private static LoadSurvivors survivors = new LoadSurvivors();
-    private static LoadKillers killers = new LoadKillers();
 
+    private static LoadPlayerSurvivors survivorsPlayer = new LoadPlayerSurvivors();
+    private static LoadPlayerKillers killersPlayer = new LoadPlayerKillers();
+    private static LoadPerksSurvivors survivorsPerks = new LoadPerksSurvivors();
+    private static LoadPerksKillers killersPerks = new LoadPerksKillers();
+
+    //PERK
     public ArrayList<Perks> getSurvivorPerks(){
-        return survivors.getSurvivorPerksList();
+        return survivorsPerks.getSurvivorPerksList();
     }
     public ArrayList<Bitmap> getSurvivorPerksIcons(){
-        return survivors.getSurvivorPerksIcons();
+        return survivorsPerks.getSurvivorPerksIcons();
     }
+
     public ArrayList<Bitmap> getSurvivorIcons(){
-        return survivors.getSurvivorsIcons();
+        return survivorsPlayer.getSurvivorsIcons();
     }
     public ArrayList<Survivor> getSurvivor(){
-        return survivors.getSurvivorsList();
+        return survivorsPlayer.getSurvivorsList();
     }
 
-
+    //KILLER
     public ArrayList<Bitmap> getKillerPerksIcons(){
-        return killers.getKillerPerksIcons();
+        return killersPerks.getKillerPerksIcons();
     }
     public ArrayList<Perks> getKillerPerks(){
-        return killers.getKillerPerksList();
+        return killersPerks.getKillerPerksList();
     }
+
     public ArrayList<Bitmap> getKillersIcons(){
-        return killers.getKillersIcons();
+        return killersPlayer.getKillersIcons();
     }
     public ArrayList<Killer> getKillers(){
-        return killers.getKillersList();
+        return killersPlayer.getKillersList();
     }
 
 
+    public ArrayList<String> prueba = new ArrayList<String>();
+
+    public void addString(String entrada){
+        prueba.add(entrada);
+    }
+    public void getprueba(){
+        System.out.println(prueba.toString());
+    }
+
+    public void build(){
+        //System.out.println(survivors.getBuildList().toString());
+    }
 
 
     public static Thread getInstance() {
         if (instance == null) {
             try {
                 instance = new Thread();
-                killers.start();
-                survivors.start();
+                survivorsPerks.start();
+                survivorsPlayer.start();
+                killersPerks.start();
+                killersPlayer.start();
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
@@ -61,11 +81,18 @@ public class Thread {
         return instance;
     }
 
-    public Boolean getSurvivorStatus(){
-        return survivors.getStatus();
+    public Boolean isPerkSurvivorComplete(){
+        return survivorsPerks.isComplete();
     }
-    public Boolean getKillerStatus(){
-        return killers.getStatus();
+    public Boolean isPerkKillerComplete(){
+        return killersPerks.isComplete();
+    }
+
+    public Boolean isPlayerSurvivorComplete(){
+        return survivorsPlayer.isComplete();
+    }
+    public Boolean isPlayerKillerComplete(){
+        return killersPlayer.isComplete();
     }
 
     public static Bitmap getBitmapFromURL(String src) {

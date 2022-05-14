@@ -14,12 +14,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DBDPerks">
         <activity
-            android:name=".KillerOptionsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SurvivorOptionsActivity"
-            android:exported="false" />
-        <activity
             android:name=".LaunchActivity"
             android:exported="true"
             android:theme="@style/Theme.SplashTheme">
@@ -33,19 +27,19 @@
             android:name=".ErrorActivity"
             android:exported="false" />
         <activity
-            android:name=".KillersActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SurvivorActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PerksKillerActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PerksSurvivorActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OptionsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BuildsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PerksActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PlayersActivity"
             android:exported="false" />
     </application>
 

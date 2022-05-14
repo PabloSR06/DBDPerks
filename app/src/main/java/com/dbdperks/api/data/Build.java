@@ -26,6 +26,9 @@ public class Build {
     @SerializedName("perk4_id")
     @Expose
     private String perk4Id;
+    @SerializedName("tipeBuild")
+    @Expose
+    private String tipeBuild;
 
     public Integer getIdBuild() {
         return idBuild;
@@ -81,5 +84,13 @@ public class Build {
 
     public void setPerk4Id(String perk4Id) {
         this.perk4Id = perk4Id;
+    }
+
+    public String getTipeBuild() {
+        return tipeBuild;
+    }
+
+    public void setTipeBuild(String tipeBuild) {
+        this.tipeBuild = tipeBuild;
     }
 }
