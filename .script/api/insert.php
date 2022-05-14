@@ -15,18 +15,20 @@
     $perk4_id = $objArr['perk4_id'];
     $nameBuild = $objArr['nameBuild'];
     $infoBuild = $objArr['infoBuild'];
+    $tipeBuild = $objArr['tipeBuild'];
 
 
     try {
         $stm = $pdo->prepare(
-            "INSERT INTO builds (perk1_id, perk2_id, perk3_id, perk4_id, nameBuild, infoBuild) 
-            VALUES (:perk1, :perk2, :perk3,:perk4,:nameBuild, :infoBuild)");
+            "INSERT INTO builds (perk1_id, perk2_id, perk3_id, perk4_id, nameBuild, infoBuild, tipeBuild) 
+            VALUES (:perk1, :perk2, :perk3,:perk4,:nameBuild, :infoBuild, :tipeBuild)");
         $stm -> bindValue(':perk1', $perk1_id);
         $stm -> bindValue(':perk2', $perk2_id);
         $stm -> bindValue(':perk3', $perk3_id);
         $stm -> bindValue(':perk4', $perk4_id);
         $stm -> bindValue(':nameBuild', $nameBuild);
         $stm -> bindValue(':infoBuild', $infoBuild);
+        $stm -> bindValue(':tipeBuild', $tipeBuild);
 
         $stm -> execute();   
         

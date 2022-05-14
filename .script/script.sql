@@ -10,7 +10,8 @@ CREATE TABLE builds(
     perk3_id VARCHAR(30),
     perk4_id VARCHAR(30),
     nameBuild VARCHAR(25) NOT NULL,
-    infoBuild VARCHAR(100) NOT NULL
+    infoBuild VARCHAR(100) NOT NULL,
+    tipeBuild BIT NOT NULL
 );
 
 
