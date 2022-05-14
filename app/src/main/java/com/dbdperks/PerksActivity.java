@@ -1,6 +1,9 @@
 package com.dbdperks;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -44,6 +47,18 @@ public class PerksActivity extends AppCompatActivity {
         ListView perklist = findViewById(R.id.list);
 
         perklist.setAdapter(perksAdapter);
+
+        perklist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Intent intent = new Intent(PerksActivity.this, PlayerInfoActivity.class);
+//                intent.putExtra("option_code", 1);
+//                intent.putExtra("player_pos", position);
+//                startActivity(intent);
+                SurvivorBuild.getInstance().addPerk(Thread.getInstance().getSurvivorPerks().get(position).getIcon());
+
+            }
+        });
     }
 
     private void optionKiller(){

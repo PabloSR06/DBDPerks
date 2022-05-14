@@ -7,14 +7,14 @@
     tools:ignore="UselessParent">
 
     <ImageView
-        android:id="@+id/perk_1"
+        android:id="@+id/perkImage"
         android:layout_width="124dp"
         android:layout_height="124dp"
         android:padding="16dp"
         tools:ignore="ContentDescription" />
 
     <TextView
-        android:id="@+id/players_name"
+        android:id="@+id/perk_nameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"

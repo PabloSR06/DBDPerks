@@ -13,7 +13,6 @@ import androidx.annotation.Nullable;
 
 import com.dbdperks.R;
 import com.dbdperks.api.data.Killer;
-import com.dbdperks.api.data.Survivor;
 import com.dbdperks.api.threads.Thread;
 
 import java.util.ArrayList;
@@ -37,17 +36,14 @@ public class KillersViewAdapter extends ArrayAdapter<Killer> {
         }
 
         Killer currentNumberPosition = getItem(position);
-        System.out.println(position);
 
-
-        ImageView imageView = currentItemView.findViewById(R.id.perk_1);
+        ImageView imageView = currentItemView.findViewById(R.id.perkImage);
         String icon = currentNumberPosition.getIcon().getPortrait();
         imageView.setImageBitmap(Thread.getInstance().getKillersIcons().get(position));
 
 
-        TextView survivor_name = currentItemView.findViewById(R.id.players_name);
+        TextView survivor_name = currentItemView.findViewById(R.id.perk_nameText);
         survivor_name.setText(currentNumberPosition.getName());
-
 
 
         return currentItemView;

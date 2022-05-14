@@ -12,15 +12,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.dbdperks.R;
+import com.dbdperks.api.data.Build;
 import com.dbdperks.api.data.Survivor;
 import com.dbdperks.api.threads.Thread;
 
 import java.util.ArrayList;
 
-public class SurvivorViewAdapter extends ArrayAdapter<Survivor> {
+public class BuildViewAdapter extends ArrayAdapter<Build> {
 
 
-    public SurvivorViewAdapter(@NonNull Context context, ArrayList<Survivor> arrayList) {
+    public BuildViewAdapter(@NonNull Context context, ArrayList<Build> arrayList) {
         super(context, 0, arrayList);
     }
 
@@ -32,18 +33,18 @@ public class SurvivorViewAdapter extends ArrayAdapter<Survivor> {
         View currentItemView = convertView;
 
         if (currentItemView == null) {
-            currentItemView = LayoutInflater.from(getContext()).inflate(R.layout.playerlist_view, parent, false);
+            currentItemView = LayoutInflater.from(getContext()).inflate(R.layout.buildlist_view, parent, false);
         }
 
-        Survivor currentNumberPosition = getItem(position);
+        Build currentNumberPosition = getItem(position);
 
-        ImageView imageView = currentItemView.findViewById(R.id.perkImage);
-        String icon = currentNumberPosition.getIcon().getPortrait();
-        imageView.setImageBitmap(Thread.getInstance().getSurvivorIcons().get(position));
-
-
-        TextView survivor_name = currentItemView.findViewById(R.id.perk_nameText);
-        survivor_name.setText(currentNumberPosition.getName());
+//        ImageView imageView = currentItemView.findViewById(R.id.perkImage);
+//        String icon = currentNumberPosition.getIcon().getPortrait();
+//        imageView.setImageBitmap(Thread.getInstance().getSurvivorIcons().get(position));
+//
+//
+//        TextView survivor_name = currentItemView.findViewById(R.id.perk_nameText);
+//        survivor_name.setText(currentNumberPosition.getName());
 
 
         return currentItemView;

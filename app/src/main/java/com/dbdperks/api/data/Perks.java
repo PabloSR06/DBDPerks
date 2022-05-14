@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Perks implements Parcelable{
+public class Perks {
 
 @SerializedName("_id")
 @Expose
@@ -42,36 +42,7 @@ private String lang;
 @Expose
 private String icon;
 
-    protected Perks(Parcel in) {
-        id = in.readString();
-        role = in.readString();
-        name = in.readString();
-        nameTag = in.readString();
-        perkName = in.readString();
-        perkTag = in.readString();
-        description = in.readString();
-        if (in.readByte() == 0) {
-            teachLevel = null;
-        } else {
-            teachLevel = in.readInt();
-        }
-        byte tmpIsPtb = in.readByte();
-        isPtb = tmpIsPtb == 0 ? null : tmpIsPtb == 1;
-        lang = in.readString();
-        icon = in.readString();
-    }
 
-    public static final Creator<Perks> CREATOR = new Creator<Perks>() {
-        @Override
-        public Perks createFromParcel(Parcel in) {
-            return new Perks(in);
-        }
-
-        @Override
-        public Perks[] newArray(int size) {
-            return new Perks[size];
-        }
-    };
 
     public String getId() {
 return id;
@@ -161,28 +132,5 @@ public void setIcon(String icon) {
 this.icon = icon;
 }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
 
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(id);
-        parcel.writeString(role);
-        parcel.writeString(name);
-        parcel.writeString(nameTag);
-        parcel.writeString(perkName);
-        parcel.writeString(perkTag);
-        parcel.writeString(description);
-        if (teachLevel == null) {
-            parcel.writeByte((byte) 0);
-        } else {
-            parcel.writeByte((byte) 1);
-            parcel.writeInt(teachLevel);
-        }
-        parcel.writeByte((byte) (isPtb == null ? 0 : isPtb ? 1 : 2));
-        parcel.writeString(lang);
-        parcel.writeString(icon);
-    }
 }

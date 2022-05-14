@@ -7,7 +7,7 @@
     tools:ignore="UselessParent">
 
     <ImageView
-        android:id="@+id/perk_1"
+        android:id="@+id/perkImage"
         android:layout_width="114dp"
         android:layout_height="114dp"
         android:padding="16dp"

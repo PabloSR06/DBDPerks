@@ -7,4 +7,6 @@
     <string name="killers">Killers</string>
     <string name="loading">Loading...</string>
     <string name="loading_break">Not long now</string>
+    <string name="Difficulty">Difficulty:</string>
+    <string name="text">TEXTO</string>
 </resources>

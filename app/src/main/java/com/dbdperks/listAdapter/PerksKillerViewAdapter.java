@@ -1,7 +1,6 @@
 package com.dbdperks.listAdapter;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,17 +36,14 @@ public class PerksKillerViewAdapter extends ArrayAdapter<Perks> {
         }
 
         Perks currentNumberPosition = getItem(position);
-        System.out.println(position);
 
-
-        ImageView imageView = currentItemView.findViewById(R.id.perk_1);
+        ImageView imageView = currentItemView.findViewById(R.id.perkImage);
         String icon = currentNumberPosition.getIcon();
 
         imageView.setImageBitmap(Thread.getInstance().getKillerPerksIcons().get(position));
 
         TextView perk_name = currentItemView.findViewById(R.id.perk_name);
         perk_name.setText(currentNumberPosition.getPerkName());
-
 
 
         return currentItemView;

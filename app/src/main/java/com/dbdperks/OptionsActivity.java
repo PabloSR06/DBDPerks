@@ -117,9 +117,9 @@ public class OptionsActivity extends AppCompatActivity {
         startActivity(intent);
     }
     private void intentBuild(){
-//        Intent intent = new Intent(OptionsActivity.this, PerksSurvivorActivity.class);
+//        Intent intent = new Intent(OptionsActivity.this, BuildsActivity.class);
 //        intent.putExtra("option_code", option_code);
 //        startActivity(intent);
-        System.out.println(option_code);
+        System.out.println(SurvivorBuild.getInstance().perks.toString());
     }
 }

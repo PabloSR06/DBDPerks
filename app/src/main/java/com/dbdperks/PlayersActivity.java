@@ -1,5 +1,6 @@
 package com.dbdperks;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -50,9 +51,10 @@ public class PlayersActivity extends AppCompatActivity {
         survivorList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Survivor x = (Survivor) survivorList.getItemAtPosition(position);
-                System.out.println(x.getName());
-                Thread.getInstance().addString(x.getName());
+                Intent intent = new Intent(PlayersActivity.this, PlayerInfoActivity.class);
+                intent.putExtra("option_code", 0);
+                intent.putExtra("player_pos", position);
+                startActivity(intent);
             }
         });
     }
@@ -65,5 +67,15 @@ public class PlayersActivity extends AppCompatActivity {
         ListView killerList = findViewById(R.id.list);
 
         killerList.setAdapter(killerAdapter);
+
+        killerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(PlayersActivity.this, PlayerInfoActivity.class);
+                intent.putExtra("option_code", 1);
+                intent.putExtra("player_pos", position);
+                startActivity(intent);
+            }
+        });
     }
 }

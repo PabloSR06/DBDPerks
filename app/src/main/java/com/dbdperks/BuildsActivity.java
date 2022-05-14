@@ -5,6 +5,7 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.dbdperks.api.data.Build;
 import com.dbdperks.api.data.Killer;
 import com.dbdperks.api.threads.Thread;
 import com.dbdperks.listAdapter.KillersViewAdapter;
@@ -35,22 +36,10 @@ public class BuildsActivity extends AppCompatActivity {
     }
 
     private void survivor(){
-        ArrayList<Killer> killers = Thread.getInstance().getKillers();
 
-        KillersViewAdapter killerAdapter = new KillersViewAdapter(this, killers);
-
-        ListView killerList = findViewById(R.id.list);
-
-        killerList.setAdapter(killerAdapter);
     }
 
     private void killer(){
-        ArrayList<Killer> killers = Thread.getInstance().getKillers();
 
-        KillersViewAdapter killerAdapter = new KillersViewAdapter(this, killers);
-
-        ListView killerList = findViewById(R.id.list);
-
-        killerList.setAdapter(killerAdapter);
     }
 }

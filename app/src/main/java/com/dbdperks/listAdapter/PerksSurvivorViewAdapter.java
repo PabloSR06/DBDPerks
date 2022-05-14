@@ -36,17 +36,14 @@ public class PerksSurvivorViewAdapter extends ArrayAdapter<Perks> {
         }
 
         Perks currentNumberPosition = getItem(position);
-        System.out.println(position);
 
-
-        ImageView imageView = currentItemView.findViewById(R.id.perk_1);
+        ImageView imageView = currentItemView.findViewById(R.id.perkImage);
         String icon = currentNumberPosition.getIcon();
 
         imageView.setImageBitmap(Thread.getInstance().getSurvivorPerksIcons().get(position));
 
         TextView perk_name = currentItemView.findViewById(R.id.perk_name);
         perk_name.setText(currentNumberPosition.getPerkName());
-
 
 
         return currentItemView;
