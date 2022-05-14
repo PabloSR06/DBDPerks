@@ -11,16 +11,12 @@ import com.dbdperks.api.threads.Thread;
 
 public class MainActivity extends AppCompatActivity {
 
-    static int patience = 0;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         navBar();
-
-        Thread.getInstance();
     }
 
     public void navBar(){
