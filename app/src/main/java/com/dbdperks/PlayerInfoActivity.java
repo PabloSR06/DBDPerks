@@ -46,7 +46,7 @@ public class PlayerInfoActivity extends AppCompatActivity {
         TextView players_nameText = findViewById(R.id.perk_nameText);
         players_nameText.setText(surv.getName());
 
-        ImageView playerImage = findViewById(R.id.perkImage);
+        ImageView playerImage = findViewById(R.id.perk1);
         playerImage.setImageBitmap(Thread.getInstance().getSurvivorIcons().get(pos));
 
         TextView difficultyText = findViewById(R.id.difficultyText);
@@ -68,7 +68,7 @@ public class PlayerInfoActivity extends AppCompatActivity {
         TextView players_nameText = findViewById(R.id.perk_nameText);
         players_nameText.setText(killer.getName());
 
-        ImageView playerImage = findViewById(R.id.perkImage);
+        ImageView playerImage = findViewById(R.id.perk1);
         playerImage.setImageBitmap(Thread.getInstance().getKillersIcons().get(pos));
 
         TextView difficultyText = findViewById(R.id.difficultyText);

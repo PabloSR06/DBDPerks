@@ -3,6 +3,8 @@ package com.dbdperks.api.threads;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Log;
+
+import com.dbdperks.api.data.Build;
 import com.dbdperks.api.data.Killer;
 import com.dbdperks.api.data.Perks;
 import com.dbdperks.api.data.Survivor;
@@ -20,6 +22,21 @@ public class Thread {
     private static LoadPlayerKillers killersPlayer = new LoadPlayerKillers();
     private static LoadPerksSurvivors survivorsPerks = new LoadPerksSurvivors();
     private static LoadPerksKillers killersPerks = new LoadPerksKillers();
+    private static  LoadBuilds builds = new LoadBuilds();
+
+    //Build
+    public ArrayList<Build> getSurvivorBuild(){
+        return builds.getSurvivorBuildList();
+    }
+    public ArrayList<ArrayList<Bitmap>> getSurvivorBuildIcons(){
+        return builds.getSurvivorBuildIcons();
+    }
+    public ArrayList<ArrayList<Bitmap>> getKillerBuildIcons(){
+        return builds.getKillerBuildIcons();
+    }
+    public ArrayList<Build> getKillerBuild(){
+        return builds.getKillerBuildList();
+    }
 
     //PERK
     public ArrayList<Perks> getSurvivorPerks(){
@@ -52,14 +69,6 @@ public class Thread {
     }
 
 
-    public ArrayList<String> prueba = new ArrayList<String>();
-
-    public void addString(String entrada){
-        prueba.add(entrada);
-    }
-    public void getprueba(){
-        System.out.println(prueba.toString());
-    }
 
     public void build(){
         //System.out.println(survivors.getBuildList().toString());
@@ -74,11 +83,16 @@ public class Thread {
                 survivorsPlayer.start();
                 killersPerks.start();
                 killersPlayer.start();
+                builds.start();
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
         }
         return instance;
+    }
+
+    public Boolean isBuildsComplete(){
+        return builds.isComplete();
     }
 
     public Boolean isPerkSurvivorComplete(){

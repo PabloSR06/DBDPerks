@@ -9,6 +9,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.dbdperks.api.data.Perks;
 import com.dbdperks.api.threads.Thread;
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
 
 public class PerksInfoActivity extends AppCompatActivity {
 
@@ -46,12 +49,17 @@ public class PerksInfoActivity extends AppCompatActivity {
         TextView players_nameText = findViewById(R.id.perk_nameText);
         players_nameText.setText(perks.getPerkName());
 
-        ImageView playerImage = findViewById(R.id.perkImage);
+        ImageView playerImage = findViewById(R.id.perk1);
         playerImage.setImageBitmap(Thread.getInstance().getSurvivorPerksIcons().get(pos));
 
         findViewById(R.id.button_addToBuild).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 SurvivorBuild.getInstance().addPerk(Thread.getInstance().getSurvivorPerks().get(pos).getIcon());
+                ArrayList<Perks> builds = new ArrayList<Perks>();
+                builds.add(Thread.getInstance().getSurvivorPerks().get(pos));
+                builds.add(Thread.getInstance().getSurvivorPerks().get(pos));
+                String json = new Gson().toJson(builds);
+                System.out.println(json);
             }
         });
 
@@ -68,7 +76,7 @@ public class PerksInfoActivity extends AppCompatActivity {
         TextView players_nameText = findViewById(R.id.perk_nameText);
         players_nameText.setText(perks.getPerkName());
 
-        ImageView playerImage = findViewById(R.id.perkImage);
+        ImageView playerImage = findViewById(R.id.perk1);
         playerImage.setImageBitmap(Thread.getInstance().getKillerPerksIcons().get(pos));
 
         findViewById(R.id.button_addToBuild).setOnClickListener(new View.OnClickListener() {

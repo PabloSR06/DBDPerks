@@ -37,7 +37,7 @@ public class KillersViewAdapter extends ArrayAdapter<Killer> {
 
         Killer currentNumberPosition = getItem(position);
 
-        ImageView imageView = currentItemView.findViewById(R.id.perkImage);
+        ImageView imageView = currentItemView.findViewById(R.id.perk1);
         String icon = currentNumberPosition.getIcon().getPortrait();
         imageView.setImageBitmap(Thread.getInstance().getKillersIcons().get(position));
 

@@ -37,7 +37,7 @@ public class SurvivorViewAdapter extends ArrayAdapter<Survivor> {
 
         Survivor currentNumberPosition = getItem(position);
 
-        ImageView imageView = currentItemView.findViewById(R.id.perkImage);
+        ImageView imageView = currentItemView.findViewById(R.id.perk1);
         String icon = currentNumberPosition.getIcon().getPortrait();
         imageView.setImageBitmap(Thread.getInstance().getSurvivorIcons().get(position));
 

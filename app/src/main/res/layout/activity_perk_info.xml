@@ -23,7 +23,7 @@
                 android:visibility="visible">
 
                 <ImageView
-                    android:id="@+id/perkImage"
+                    android:id="@+id/perk1"
                     android:layout_width="124dp"
                     android:layout_height="124dp"
                     android:padding="16dp"

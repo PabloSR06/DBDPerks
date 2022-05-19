@@ -13,8 +13,13 @@ import androidx.annotation.Nullable;
 
 import com.dbdperks.R;
 import com.dbdperks.api.data.Build;
+import com.dbdperks.api.data.Perks;
 import com.dbdperks.api.data.Survivor;
 import com.dbdperks.api.threads.Thread;
+import com.google.gson.Gson;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 
 import java.util.ArrayList;
 
@@ -38,9 +43,21 @@ public class BuildViewAdapter extends ArrayAdapter<Build> {
 
         Build currentNumberPosition = getItem(position);
 
-//        ImageView imageView = currentItemView.findViewById(R.id.perkImage);
-//        String icon = currentNumberPosition.getIcon().getPortrait();
-//        imageView.setImageBitmap(Thread.getInstance().getSurvivorIcons().get(position));
+        //Thread.getBitmapFromURL()
+
+        ImageView perk1 = currentItemView.findViewById(R.id.perk1);
+        ImageView perk2 = currentItemView.findViewById(R.id.perk2);
+        ImageView perk3 = currentItemView.findViewById(R.id.perk3);
+        ImageView perk4 = currentItemView.findViewById(R.id.perk4);
+
+
+
+        if (currentNumberPosition.getPerks() != null) {
+            int len = Thread.getInstance().getKillerBuildIcons().get(position).size();
+            for (int j = 0; j < len; j++) {
+                perk1.setImageBitmap(Thread.getInstance().getKillerBuildIcons().get(position).get(j));
+            }
+        }
 //
 //
 //        TextView survivor_name = currentItemView.findViewById(R.id.perk_nameText);
@@ -49,5 +66,7 @@ public class BuildViewAdapter extends ArrayAdapter<Build> {
 
         return currentItemView;
     }
+
+
 
 }
