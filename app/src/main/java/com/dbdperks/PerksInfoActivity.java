@@ -54,12 +54,7 @@ public class PerksInfoActivity extends AppCompatActivity {
 
         findViewById(R.id.button_addToBuild).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                SurvivorBuild.getInstance().addPerk(Thread.getInstance().getSurvivorPerks().get(pos).getIcon());
-                ArrayList<Perks> builds = new ArrayList<Perks>();
-                builds.add(Thread.getInstance().getSurvivorPerks().get(pos));
-                builds.add(Thread.getInstance().getSurvivorPerks().get(pos));
-                String json = new Gson().toJson(builds);
-                System.out.println(json);
+
             }
         });
 

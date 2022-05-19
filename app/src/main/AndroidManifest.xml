@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DBDPerks">
-
+        <activity
+            android:name=".BuildInfoActivity"
+            android:exported="false" />
         <activity
             android:name=".LaunchActivity"
             android:exported="true"

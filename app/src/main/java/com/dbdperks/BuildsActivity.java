@@ -9,17 +9,9 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.dbdperks.api.data.Build;
-import com.dbdperks.api.data.Killer;
-import com.dbdperks.api.data.Perks;
 import com.dbdperks.api.threads.Thread;
-import com.dbdperks.listAdapter.BuildViewAdapter;
-import com.dbdperks.listAdapter.KillersViewAdapter;
-import com.dbdperks.listAdapter.PerksKillerViewAdapter;
-import com.google.gson.Gson;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.dbdperks.listAdapter.BuildKillerViewAdapter;
+import com.dbdperks.listAdapter.BuildSurvivorViewAdapter;
 
 import java.util.ArrayList;
 
@@ -47,29 +39,43 @@ public class BuildsActivity extends AppCompatActivity {
     }
 
     private void survivor(){
-        Build build = new Build();
-        build = Thread.getInstance().getSurvivorBuild().get(0);
+        ArrayList<Build> buildSurvivorList = Thread.getInstance().getSurvivorBuild();
 
+        BuildSurvivorViewAdapter buildAdapter = new BuildSurvivorViewAdapter(this, buildSurvivorList);
 
+        ListView buildList = findViewById(R.id.list);
+
+        buildList.setAdapter(buildAdapter);
+
+        buildList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(BuildsActivity.this, BuildInfoActivity.class);
+                intent.putExtra("option_code", 0);
+                intent.putExtra("player_pos", position);
+                startActivity(intent);
+
+            }
+        });
 
     }
 
     private void killer(){
         ArrayList<Build> buildKillerList = Thread.getInstance().getKillerBuild();
 
-        BuildViewAdapter perksAdapter = new BuildViewAdapter(this, buildKillerList);
+        BuildKillerViewAdapter buildAdapter = new BuildKillerViewAdapter(this, buildKillerList);
 
         ListView buildList = findViewById(R.id.list);
 
-        buildList.setAdapter(perksAdapter);
+        buildList.setAdapter(buildAdapter);
 
         buildList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Intent intent = new Intent(PerksActivity.this, PerksInfoActivity.class);
-//                intent.putExtra("option_code", 1);
-//                intent.putExtra("player_pos", position);
-//                startActivity(intent);
+                Intent intent = new Intent(BuildsActivity.this, BuildInfoActivity.class);
+                intent.putExtra("option_code", 1);
+                intent.putExtra("player_pos", position);
+                startActivity(intent);
 
             }
         });
