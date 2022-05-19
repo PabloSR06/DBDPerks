@@ -5,7 +5,7 @@
     try {
         $query = $pdo->prepare("SELECT * FROM builds WHERE tipeBuild = 0");
         $query->execute();
-        $data = $query->fetchAll();
+        $data = $query->fetchAll(PDO::FETCH_ASSOC);
 
         echo(json_encode($data));
     } catch (\Throwable $th) {
