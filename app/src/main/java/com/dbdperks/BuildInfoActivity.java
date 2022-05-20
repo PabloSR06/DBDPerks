@@ -95,6 +95,9 @@ public class BuildInfoActivity extends AppCompatActivity {
 
         TextView nameBuild = findViewById(R.id.nameBuild);
         nameBuild.setText(build.getNameBuild());
+
+        TextView description = findViewById(R.id.descriptionBuildText);
+        description.setText(build.getInfoBuild());
     }
 
 }

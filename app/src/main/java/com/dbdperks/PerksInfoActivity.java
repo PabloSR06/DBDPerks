@@ -58,6 +58,9 @@ public class PerksInfoActivity extends AppCompatActivity {
             }
         });
 
+        TextView description = findViewById(R.id.descriptionperkText);
+        description.setText(perks.getDescription());
+
 
 
     }
@@ -79,5 +82,8 @@ public class PerksInfoActivity extends AppCompatActivity {
                 //SurvivorBuild.getInstance().addPerk(Thread.getInstance().getSurvivorPerks().get(pos).getIcon());
             }
         });
+
+        TextView description = findViewById(R.id.descriptionperkText);
+        description.setText(perks.getDescription());
     }
 }

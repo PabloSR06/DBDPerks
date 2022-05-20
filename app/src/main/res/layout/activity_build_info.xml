@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="5dp"
     tools:context=".PlayerInfoActivity">
 
     <ScrollView
@@ -32,7 +33,7 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="10dp" />
+                android:layout_height="20dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -47,7 +48,7 @@
                     android:layout_height="100dp"
                     android:padding="5dp"
                     tools:ignore="ContentDescription,ImageContrastCheck"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    android:background="@drawable/perkbackground"/>
 
                 <ImageView
                     android:id="@+id/perk2"
@@ -55,7 +56,7 @@
                     android:layout_height="100dp"
                     android:padding="5dp"
                     tools:ignore="ContentDescription"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    android:background="@drawable/perkbackground"/>
 
                 <ImageView
                     android:id="@+id/perk3"
@@ -63,7 +64,7 @@
                     android:layout_height="100dp"
                     android:padding="5dp"
                     tools:ignore="ContentDescription,ImageContrastCheck,ImageContrastCheck"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    android:background="@drawable/perkbackground"/>
 
                 <ImageView
                     android:id="@+id/perk4"
@@ -71,10 +72,24 @@
                     android:layout_height="100dp"
                     android:padding="5dp"
                     tools:ignore="ContentDescription"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    android:background="@drawable/perkbackground"/>
 
 
             </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:id="@+id/descriptionBuildText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
 
 
         </LinearLayout>

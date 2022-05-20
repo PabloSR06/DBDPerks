@@ -5,39 +5,40 @@
     android:layout_height="wrap_content"
     android:gravity="center_horizontal"
     android:orientation="horizontal"
+    android:padding="5dp"
     tools:ignore="UselessParent">
 
     <ImageView
         android:id="@+id/perk1"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:background="@drawable/perkbackground"
         android:padding="5dp"
-        tools:ignore="ContentDescription"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/perk2"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:background="@drawable/perkbackground"
         android:padding="5dp"
-        tools:ignore="ContentDescription"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/perk3"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:background="@drawable/perkbackground"
         android:padding="5dp"
-        tools:ignore="ContentDescription"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/perk4"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:background="@drawable/perkbackground"
         android:padding="5dp"
-        tools:ignore="ContentDescription"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:ignore="ContentDescription" />
 
 
 </LinearLayout>

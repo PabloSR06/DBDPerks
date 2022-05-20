@@ -4,15 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
+    android:padding="5dp"
     tools:ignore="UselessParent">
 
     <ImageView
         android:id="@+id/perk1"
         android:layout_width="114dp"
         android:layout_height="114dp"
-        android:padding="16dp"
+        android:padding="5dp"
         tools:ignore="ContentDescription"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars"
+        android:background="@drawable/perkbackground"
+        />
 
     <TextView
         android:id="@+id/perk_name"
