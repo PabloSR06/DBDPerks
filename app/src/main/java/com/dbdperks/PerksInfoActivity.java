@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -55,6 +56,12 @@ public class PerksInfoActivity extends AppCompatActivity {
         findViewById(R.id.button_addToBuild).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
+
+                if(SurvivorBuild.getInstance().addPerk(Thread.getInstance().getSurvivorPerksIcons().get(pos), Thread.getInstance().getSurvivorPerks().get(pos)) == true){
+                    Toast.makeText(PerksInfoActivity.this, getResources().getString(R.string.perkadded), Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(PerksInfoActivity.this, getResources().getString(R.string.buildfull), Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

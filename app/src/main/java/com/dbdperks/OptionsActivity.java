@@ -62,7 +62,17 @@ public class OptionsActivity extends AppCompatActivity {
 
         findViewById(R.id.button_build).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                intentBuild();
+                if (Thread.getInstance().isBuildsComplete() != false) {
+                    intentBuild();
+                } else {
+                    loading_alert();
+                }
+            }
+        });
+
+        findViewById(R.id.button_addBuild).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                intentAddBuild();
             }
         });
     }
@@ -90,7 +100,11 @@ public class OptionsActivity extends AppCompatActivity {
 
         findViewById(R.id.button_build).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                intentBuild();
+                if (Thread.getInstance().isBuildsComplete() != false) {
+                    intentBuild();
+                } else {
+                    loading_alert();
+                }
             }
         });
     }
@@ -118,6 +132,12 @@ public class OptionsActivity extends AppCompatActivity {
     }
     private void intentBuild(){
         Intent intent = new Intent(OptionsActivity.this, BuildsActivity.class);
+        intent.putExtra("option_code", option_code);
+        startActivity(intent);
+
+    }
+    private void intentAddBuild(){
+        Intent intent = new Intent(OptionsActivity.this, AddBuildActivity.class);
         intent.putExtra("option_code", option_code);
         startActivity(intent);
 
