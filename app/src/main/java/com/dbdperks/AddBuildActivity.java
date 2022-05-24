@@ -88,7 +88,44 @@ public class AddBuildActivity extends AppCompatActivity {
 
     }
     private void killer(){
+        ImageView perk1 = findViewById(R.id.perk1);
+        ImageView perk2 = findViewById(R.id.perk2);
+        ImageView perk3 = findViewById(R.id.perk3);
+        ImageView perk4 = findViewById(R.id.perk4);
 
+        ArrayList<Perks> perks = KillerBuild.getInstance().getPerks();
+        ArrayList<Bitmap> icons = KillerBuild.getInstance().getIcons();
+
+        if (perks != null) {
+            int len = icons.size();
+            for (int j = 0; j < len; j++) {
+                Bitmap icon = icons.get(j);
+                switch (j){
+                    case 0:
+                        perk1.setImageBitmap(icon);
+                        break;
+                    case 1:
+                        perk2.setImageBitmap(icon);
+                        break;
+                    case 2:
+                        perk3.setImageBitmap(icon);
+                        break;
+                    case 3:
+                        perk4.setImageBitmap(icon);
+                        break;
+                }
+            }
+
+        }
+        findViewById(R.id.button_sendBuild).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                KillerBuild.getInstance().endInstance();
+
+                Intent intent = new Intent(AddBuildActivity.this, OptionsActivity.class);
+                intent.putExtra("option_code", 1);
+                startActivity(intent);
+            }
+        });
 
     }
 }

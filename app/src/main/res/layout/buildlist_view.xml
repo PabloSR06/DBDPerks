@@ -3,10 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center_horizontal"
+    android:gravity="center"
     android:orientation="horizontal"
     android:padding="5dp"
     tools:ignore="UselessParent">
+
 
     <ImageView
         android:id="@+id/perk1"
@@ -14,6 +15,8 @@
         android:layout_height="100dp"
         android:background="@drawable/perkbackground"
         android:padding="5dp"
+        android:scaleType="center"
+        android:visibility="gone"
         tools:ignore="ContentDescription" />
 
     <ImageView
@@ -22,6 +25,8 @@
         android:layout_height="100dp"
         android:background="@drawable/perkbackground"
         android:padding="5dp"
+        android:scaleType="center"
+        android:visibility="gone"
         tools:ignore="ContentDescription" />
 
     <ImageView
@@ -30,7 +35,10 @@
         android:layout_height="100dp"
         android:background="@drawable/perkbackground"
         android:padding="5dp"
-        tools:ignore="ContentDescription" />
+        android:scaleType="center"
+        android:visibility="gone"
+        tools:ignore="ContentDescription"
+        tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/perk4"
@@ -38,6 +46,8 @@
         android:layout_height="100dp"
         android:background="@drawable/perkbackground"
         android:padding="5dp"
+        android:scaleType="center"
+        android:visibility="gone"
         tools:ignore="ContentDescription" />
 
 

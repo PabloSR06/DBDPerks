@@ -18,11 +18,15 @@ public class Thread {
 
     private static Thread instance;
 
+    //retrieve
     private static LoadPlayerSurvivors survivorsPlayer = new LoadPlayerSurvivors();
     private static LoadPlayerKillers killersPlayer = new LoadPlayerKillers();
     private static LoadPerksSurvivors survivorsPerks = new LoadPerksSurvivors();
     private static LoadPerksKillers killersPerks = new LoadPerksKillers();
-    private static  LoadBuilds builds = new LoadBuilds();
+    private static LoadBuilds builds = new LoadBuilds();
+
+    //create
+    private static AddBuild add_build;
 
     //Build
     public ArrayList<Build> getSurvivorBuild(){
@@ -69,9 +73,10 @@ public class Thread {
     }
 
 
-
-    public void build(){
-        //System.out.println(survivors.getBuildList().toString());
+    //Create Build
+    public void create_build(Build build){
+        add_build = new AddBuild(build);
+        add_build.start();
     }
 
 

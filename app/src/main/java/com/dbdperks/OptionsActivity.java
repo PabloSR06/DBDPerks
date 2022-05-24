@@ -107,6 +107,11 @@ public class OptionsActivity extends AppCompatActivity {
                 }
             }
         });
+        findViewById(R.id.button_addBuild).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                intentAddBuild();
+            }
+        });
     }
 
 

@@ -1,20 +1,17 @@
 package com.dbdperks;
 
 import android.graphics.Bitmap;
-import android.widget.Toast;
 
-import com.dbdperks.api.DBD_BUILDS_Service;
 import com.dbdperks.api.data.Build;
 import com.dbdperks.api.data.Perks;
 import com.dbdperks.api.threads.Thread;
 import com.google.gson.Gson;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
-public class SurvivorBuild {
+public class KillerBuild {
 
-    private static SurvivorBuild instance;
+    private static KillerBuild instance;
 
     private final int maxPerks = 4;
     private int perkSize = 0;
@@ -59,10 +56,10 @@ public class SurvivorBuild {
         this.instance = null;
     }
 
-    public static SurvivorBuild getInstance(){
+    public static KillerBuild getInstance(){
         if (instance == null) {
             try {
-                instance = new SurvivorBuild();
+                instance = new KillerBuild();
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }

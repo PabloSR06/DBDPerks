@@ -46,33 +46,37 @@
                     android:id="@+id/perk1"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
+                    android:background="@drawable/perkbackground"
                     android:padding="5dp"
-                    tools:ignore="ContentDescription,ImageContrastCheck"
-                    android:background="@drawable/perkbackground"/>
+                    android:visibility="gone"
+                    tools:ignore="ContentDescription,ImageContrastCheck" />
 
                 <ImageView
                     android:id="@+id/perk2"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
+                    android:background="@drawable/perkbackground"
                     android:padding="5dp"
-                    tools:ignore="ContentDescription"
-                    android:background="@drawable/perkbackground"/>
+                    android:visibility="gone"
+                    tools:ignore="ContentDescription" />
 
                 <ImageView
                     android:id="@+id/perk3"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
+                    android:background="@drawable/perkbackground"
                     android:padding="5dp"
-                    tools:ignore="ContentDescription,ImageContrastCheck,ImageContrastCheck"
-                    android:background="@drawable/perkbackground"/>
+                    android:visibility="gone"
+                    tools:ignore="ContentDescription,ImageContrastCheck,ImageContrastCheck" />
 
                 <ImageView
                     android:id="@+id/perk4"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
+                    android:background="@drawable/perkbackground"
                     android:padding="5dp"
-                    tools:ignore="ContentDescription"
-                    android:background="@drawable/perkbackground"/>
+                    android:visibility="gone"
+                    tools:ignore="ContentDescription" />
 
 
             </LinearLayout>

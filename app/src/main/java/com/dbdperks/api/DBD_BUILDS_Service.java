@@ -6,6 +6,7 @@ import com.dbdperks.api.data.Build;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
@@ -47,8 +48,24 @@ public class DBD_BUILDS_Service {
         service = retrofit.create(DBD_BUILDS_Interface.class);
     }
 
-    public void createBuild(Build build) {
-        Call<Build> userCall = service.createBuild(build);
+    public void createBuild(Build build) throws Exception {
+
+//        userCall.execute();
+        String st = "{\"id_Build\":\"12\",\"infoBuild\":\"astra\",\"nameBuild\":\"Name\",\"perks\":\"[]\",\"tipeBuild\":\"0\"}";
+        Gson gs =  new GsonBuilder().create();
+                Build ss = gs.fromJson(st,  Build.class);
+        Call<Build> userCall = service.createBuild(ss);
+        userCall.enqueue(new Callback<Build>() {
+            @Override
+            public void onResponse(Call<Build> call, Response<Build> response) {
+                System.out.println("asa");
+            }
+
+            @Override
+            public void onFailure(Call<Build> call, Throwable t) {
+                System.out.println(t);
+            }
+        });
 
     }
     public ArrayList<Build> getBuilds() throws Exception {

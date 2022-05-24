@@ -52,15 +52,19 @@ public class BuildSurvivorViewAdapter extends ArrayAdapter<Build> {
                 switch (j){
                     case 0:
                         perk1.setImageBitmap(icon);
+                        perk1.setVisibility(View.VISIBLE);
                         break;
                     case 1:
                         perk2.setImageBitmap(icon);
+                        perk2.setVisibility(View.VISIBLE);
                         break;
                     case 2:
                         perk3.setImageBitmap(icon);
+                        perk3.setVisibility(View.VISIBLE);
                         break;
                     case 3:
                         perk4.setImageBitmap(icon);
+                        perk4.setVisibility(View.VISIBLE);
                         break;
                 }
             }

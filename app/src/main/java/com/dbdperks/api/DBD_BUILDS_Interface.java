@@ -21,12 +21,12 @@ public interface DBD_BUILDS_Interface {
     Call<Build> createBuild(@Body Build build);
 
     @GET("getbuilds.php")
-   public Call<ArrayList<Build>> getBuilds();
-
-    @GET("getbuildssurvivors.php")
-    public Call<ArrayList<Build>> getBuildKillers();
+    public Call<ArrayList<Build>> getBuilds();
 
     @GET("getbuildskillers.php")
+    public Call<ArrayList<Build>> getBuildKillers();
+
+    @GET("getbuildssurvivors.php")
     public Call<ArrayList<Build>> getBuildSurvivors();
 
 
