@@ -99,7 +99,7 @@ public class LoadBuilds extends java.lang.Thread {
             if (jsonArray != null) {
                 int len = jsonArray.length();
                 for (int j = 0; j < len; j++) {
-                    perksList.add(new Gson().fromJson(jsonArray.get(0).toString(), Perks.class));
+                    perksList.add(new Gson().fromJson(jsonArray.get(j).toString(), Perks.class));
                 }
             }
             return perksList;

@@ -12,4 +12,8 @@
     <string name="add">ADD to Build</string>
     <string name="perkadded">Perk added to build</string>
     <string name="buildfull">This Build is full</string>
+    <string name="title">Title</string>
+    <string name="info">What this does</string>
+    <string name="create">Create</string>
+    <string name="newbuild">New Build</string>
 </resources>

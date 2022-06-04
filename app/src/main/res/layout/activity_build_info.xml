@@ -44,39 +44,43 @@
 
                 <ImageView
                     android:id="@+id/perk1"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
                     android:background="@drawable/perkbackground"
                     android:padding="5dp"
                     android:visibility="gone"
-                    tools:ignore="ContentDescription,ImageContrastCheck" />
+                    tools:ignore="ContentDescription,ImageContrastCheck"
+                    tools:visibility="invisible" />
 
                 <ImageView
                     android:id="@+id/perk2"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
                     android:background="@drawable/perkbackground"
                     android:padding="5dp"
                     android:visibility="gone"
-                    tools:ignore="ContentDescription" />
+                    tools:ignore="ContentDescription"
+                    tools:visibility="invisible" />
 
                 <ImageView
                     android:id="@+id/perk3"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
                     android:background="@drawable/perkbackground"
                     android:padding="5dp"
                     android:visibility="gone"
-                    tools:ignore="ContentDescription,ImageContrastCheck,ImageContrastCheck" />
+                    tools:ignore="ContentDescription,ImageContrastCheck,ImageContrastCheck"
+                    tools:visibility="invisible" />
 
                 <ImageView
                     android:id="@+id/perk4"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
                     android:background="@drawable/perkbackground"
                     android:padding="5dp"
                     android:visibility="gone"
-                    tools:ignore="ContentDescription" />
+                    tools:ignore="ContentDescription"
+                    tools:visibility="invisible" />
 
 
             </LinearLayout>
